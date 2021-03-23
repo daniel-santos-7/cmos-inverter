@@ -1,0 +1,25 @@
+* simulação transiente de inversor CMOS
+
+* pré layout
+*.include	./pre-cmos-inverter.spice
+
+* pós layout
+.include 	./post-cmos-inverter.spice
+
+* alimentação
+* name	(+)	(-)	value
+Vdd	vdd	0	2.5
+Vin	in	0	pulse 0 2.5 0 10p 10p 1n 2n
+Xinv	out	in	vdd	0	cmos_inv
+
+* simulação transiente
+* cmd	step	stop
+.tran	1p	2n
+
+* controle da simulação
+.control
+	run
+	plot out in
+.endc
+
+.end

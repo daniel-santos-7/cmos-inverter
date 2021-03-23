@@ -1,0 +1,26 @@
+* simulação dc do inversor CMOS
+
+* pré layout
+.include	./pre-cmos-inverter.spice
+
+* pós layout
+*.include 	./post-cmos-inverter.spice
+
+* alimentação
+* name	(+)	(-)	value
+Vdd	vdd	0	2.5
+Vin	in	0	2.5
+Xinv	out	in	vdd	0	cmos_inv
+
+
+* simulação DC
+* cmd 	src	start	stop	step
+.dc	Vin	0	2.5	0.05
+
+* controle da simulação
+.control
+	run
+	plot out in
+.endc
+
+.end

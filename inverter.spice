@@ -1,0 +1,19 @@
+* SPICE3 file created from inverter.ext - technology: sky130A
+
+.option scale=5000u
+
+M1000 out in vdd w_944_154# pshort w=600 l=30
++  ad=44400 pd=1348 as=48000 ps=1360
+M1001 out in vgnd VSUBS nshort w=200 l=30
++  ad=14800 pd=548 as=16000 ps=560
+C0 out in 0.01fF
+C1 out w_944_154# 0.00fF
+C2 vgnd out 0.07fF
+C3 w_944_154# vdd 0.00fF
+C4 vgnd vdd 0.01fF
+C5 out vdd 0.22fF
+C6 vgnd VSUBS 0.33fF
+C7 out VSUBS 0.25fF
+C8 vdd VSUBS 0.30fF
+C9 in VSUBS 0.44fF
+C10 w_944_154# VSUBS 0.52fF

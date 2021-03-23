@@ -1,0 +1,17 @@
+* pré layout - inversor CMOS
+
+* Incluir bibliotecas
+.include	./minimal_libs/pshort.lib
+.include	./minimal_libs/nshort.lib
+
+* Definir inversor como um subcircuito
+.subckt	cmos_inv	out	in	vdd	vgnd  
+
+* NMOS e PMOS
+* name	drain	gate	source	bulk	model		width	length
+M1	out	in	vdd	vdd	pshort_model.0	W=3u	L=0.15u
+M2	out	in	vgnd	vgnd	nshort_model.0	W=1u	L=0.15u
+
+.ends
+
+.end
